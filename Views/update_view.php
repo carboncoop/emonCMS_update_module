@@ -65,7 +65,7 @@ global $session, $path;
             if (available_updates.themes.length > 0) {
                 for (var theme in available_updates.themes) {
                     var out = available_update_to_tr('themes', theme);
-                    $('table.modules').append(out);
+                    $('table.themes').append(out);
                 }
                 $('.themes').show();
             }
