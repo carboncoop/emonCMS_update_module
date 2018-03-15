@@ -32,10 +32,10 @@ class Update {
     private $log;
 
     public function __construct() {
+        $this->log = new EmonLogger(__FILE__);
         $this->emoncms = $this->ini('emoncms');
         $this->modules = $this->ini('modules');
         $this->themes = $this->ini('themes');
-        $this->log = new EmonLogger(__FILE__);
     }
 
     private function ini($type) {
@@ -140,6 +140,7 @@ class Update {
                 $result = true;
                 //$result['status'] = str_replace(["'", '"'], "", implode(" -- ", $module_status));
             }
+            $this->log->info($type . ' - ' . $item['name'] . ' - ' . implode(' ', $module_status));
 
             if ($type != 'emoncms')
                 chdir('../..');
