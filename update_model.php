@@ -141,7 +141,7 @@ class Update {
                 $result = true;
                 //$result['status'] = str_replace(["'", '"'], "", implode(" -- ", $module_status));
             }
-            $this->log->warn($type . ' - ' . $item['name'] . ' - ' . implode(' ', $module_status));
+            $this->log->info($type . ' - ' . $item['name'] . ' - ' . implode(' ', $module_status));
 
             if ($type != 'emoncms')
                 chdir('../..');
