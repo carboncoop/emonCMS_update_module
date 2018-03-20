@@ -135,6 +135,7 @@ class Update {
             $module_status = [];
             chdir($this->get_dir($type, $item));
 
+            exec("git fetch 2>&1");
             exec("git status 2>&1", $module_status);
             if (strpos($module_status[1], 'branch is behind') != false) {
                 $result = true;
